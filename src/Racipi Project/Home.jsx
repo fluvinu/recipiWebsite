@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Catogary from './Catogary';
 import './Home.css';
+import './Catogary.css'
+import { useNavigate } from 'react-router-dom'
 const Home = () => {
     const [data, setData] = useState([]);
+    const navigate=useNavigate();
     useEffect(() => {
         fetch('https://www.themealdb.com/api/json/v1/1/random.php')
             .then(res => res.json())
@@ -17,7 +20,7 @@ const Home = () => {
 
 
                             <div className="left">
-                                <img src={item.strMealThumb} style={{ width: '50%', borderRadius: '50%' }} alt="hello" />
+                                <img onClick={()=>navigate('/specicat',{state:{item}})} src={item.strMealThumb} style={{ width: '50%', borderRadius: '50%' }} alt="hello" />
 
                             </div>
 
