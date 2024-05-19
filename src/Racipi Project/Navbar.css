@@ -1,0 +1,24 @@
+.Navbar{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    background: white;
+
+}
+.Link{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+input{
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+.logo{
+    display: flex;
+}
