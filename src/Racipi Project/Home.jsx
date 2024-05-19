@@ -1,36 +1,44 @@
 import React, { useEffect, useState } from 'react'
 import Catogary from './Catogary';
+import './Home.css';
 const Home = () => {
-    const [data,setData]=useState([]);
-    useEffect(()=>{
+    const [data, setData] = useState([]);
+    useEffect(() => {
         fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-        .then(res=>res.json())
-        .then(d=>setData(d.meals))
-    },[])
-  return (
-    <div className='Home'>
-        {
-            data.map((item)=>{
-                return(
-                    <div className="cards" key={item.idMeal} style={{display:'flex',justifyContent:'space-around',}}>
-                        <div className="right">
-                            <h1 className='h11'> todays special</h1>
-                            <h1 className='h11' style={{color:'orange'}}>{item.strMeal}</h1>
-                            <h1 className='h11'>{item.strArea}</h1>
+            .then(res => res.json())
+            .then(d => setData(d.meals))
+    }, [])
+    return (
+        <div className='Home'>
+            {
+                data.map((item) => {
+                    return (
+                        <div className="cards" key={item.idMeal} style={{ display: 'flex', justifyContent: 'space-around', }}>
+
+
+                            <div className="left">
+                                <img src={item.strMealThumb} style={{ width: '50%', borderRadius: '50%' }} alt="hello" />
+
+                            </div>
+
+                            <div className="right">
+                                <h1 className='h11'> todays special</h1>
+                                <h1 className='h11' style={{ color: 'orange' }}>{item.strMeal}</h1>
+                                <h1 className='h11'>{item.strArea}</h1>
+                            </div>
+
+
+
                         </div>
-                        <div className="left">
-                            <img src={item.strMealThumb} style={{width:'400px' ,height:'400px', borderRadius:'50%'}} alt="" />
-                        </div>
-                    </div>
-                )
-                
-            }) 
-        }
-        
-        <Catogary/>
-      
-    </div>
-  )
+                    )
+
+                })
+            }
+
+            <Catogary />
+
+        </div>
+    )
 }
 
 export default Home
