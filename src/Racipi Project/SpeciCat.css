@@ -1,0 +1,9 @@
+article{
+    overflow-x: hidden;
+    overflow-x: scroll;
+    display: flex;
+    width: 100vw;
+}
+::-webkit-scrollbar{
+    display: none;
+}
