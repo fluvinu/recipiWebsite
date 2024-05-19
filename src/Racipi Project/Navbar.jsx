@@ -11,7 +11,7 @@ const Navbar = () => {
             
             <div className="Link">
                 <Link to={'/'}> Home </Link>
-                <input type="text" placeholder='search rechipes' />
+                <input type="text" placeholder='still working on serach fucn' />
             </div>
            
         
